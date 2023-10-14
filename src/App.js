@@ -6,21 +6,21 @@ function App() {
       id : 0,
      expense : "food",
      cost : "rs 10",
-     date : "2020-12-11",
+     date : new Date("2020-12-11"),
      location : "restorant"
     },
     {
       id:1,
         expense : "petrol",
         cost : "rs 100",
-        date : "2020-11-2",
+        date : new Date("2020-11-2"),
         location : "bharat petrolium"
        },
        {
         id : 2,
         expense : "Movies",
         cost : "rs 200",
-        date : "2020-12-3",
+        date : new Date("2020-12-3"),
         location : "rock plaza"
        },
   ]
