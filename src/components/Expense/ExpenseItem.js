@@ -3,6 +3,7 @@ import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 import ExpenseDetails from './ExpenseDetails';
 import Card from '../UI/Card';
+
 export function ExpenseItem(props){
     const [title , setTitle] = useState(props.title)
   // console.log(props);
@@ -20,6 +21,7 @@ export function ExpenseItem(props){
          
             
             <Card className='expense-item' >
+               
                <ExpenseDate date = {props.date} /> 
                <ExpenseDetails title = {title} location = {props.location} price = {props.price} />
                <button onClick = {deleteExpense}>Update</button>
