@@ -5,7 +5,7 @@ const ExpenseForm = () => {
     
        const [title ,setTitle] = useState('');
        const [date , setDate] = useState('');
-       const [amount ,setAmount] = useState(0);
+       const [amount ,setAmount] = useState('');
        const dateHandler =(e) =>{
              setDate(e.target.value);
        }
@@ -17,9 +17,12 @@ const ExpenseForm = () => {
        }
        function submitHandler(e){
         e.preventDefault();
-        console.log(title);
-        console.log(date);
-        console.log(amount);
+        let obj ={
+          expenseTitle : title,
+          expenseAmount :amount,
+          expenseDate : new Date(date)
+        }
+        console.log(obj)
         /*  console.log(1);
          e.preventDefault();
          let expenseName = document.getElementById('expenseName');
