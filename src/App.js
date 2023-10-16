@@ -6,14 +6,14 @@ const data = [
     id : 100,
    expense : "food",
    cost : " 10",
-   date : new Date("2020-12-11"),
+   date : new Date("2021-12-11"),
    location : "restorant"
   },
   {
     id:1,
       expense : "petrol",
       cost : " 100",
-      date : new Date("2020-11-2"),
+      date : new Date("2022-11-2"),
       location : "bharat petrolium"
      },
      {
