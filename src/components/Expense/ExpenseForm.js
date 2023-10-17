@@ -36,17 +36,17 @@ const ExpenseForm = (props) => {
   return (
     <div className = "container">
       {visibile == false &&  <input  id = "inp" onClick = {(e) =>{setVisible(true)}} type = "submit" value = "Open Form"/>}
-     { visibile == true && (<form>
+     { visibile == true && (<form onSubmit = {submitHandler}>
       <label htmlFor = "expenseName">Expense Name</label>
-      <input type = "text" id = "expenseName" value = {title} onChange = {titleHandler}/>
+      <input type = "text" id = "expenseName" value = {title} onChange = {titleHandler} required/>
       <br/>
       <label htmlFor = "expenseAmount">Expense Amount</label>
-      <input type = "number" id = "expenseAmount" value = {amount} onChange = {amountHandler}/>
+      <input type = "number" id = "expenseAmount" value = {amount} onChange = {amountHandler} required/>
     <br/>
       <label htmlFor = "expenseDate">Expense Date</label>
-      <input type = "date" id = "expenseDate" min = "2019-01-01" max = "2023-12-31" value = {date} onChange = {dateHandler}/>
+      <input type = "date" id = "expenseDate" min = "2019-01-01" max = "2023-12-31" value = {date} onChange = {dateHandler} required/>
       <br/>
-      <input onClick = {submitHandler} type = "submit" value = "Add Expense"/>
+      <input  type = "submit" value = "Add Expense"/>
       </form>) }
     </div>
   )

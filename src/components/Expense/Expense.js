@@ -3,11 +3,12 @@ import { ExpenseItem } from "./ExpenseItem";
 import './Expense.css'
 import Card from "../UI/Card";
 import ExpenseFilter from "./ExpenseFilter"; 
+import ExpenseChart from './ExpenseChart';
 
 function Expense(props){
   const[expenseData , setExpenseData] = useState(props.data)
 
-  console.log(expenseData)
+  console.log(props.data)
  // expenseData.length == 1 && console.log(props.data[0].date.getFullYear())
   const expenseFilterHandler = (value) =>{
     // let newExpenseData = expenseData.map((val) => {val.filterItem = value;
@@ -23,6 +24,7 @@ function Expense(props){
   }
   return (
         <Card className = 'expenses'>
+          <ExpenseChart expenses = {props.data}/>
           <ExpenseFilter onExpenseFilter = {expenseFilterHandler}/>   
         {props.data.length == 0 && <p>No Expense to Show</p>}
           {props.data.length == 1 && (<><ExpenseItem key = {props.data[0].id} 
