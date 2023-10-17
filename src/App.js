@@ -26,7 +26,16 @@ const data = [
 ]
 const App = () => {
   const [arr , setArr] = useState(data); 
-  console.log(arr);
+  const [value , setValue] = useState(data);
+  const filterItems = (info) =>{
+          
+    let lastInfo = value.filter(val =>{
+     return val.date.getFullYear() == info
+    }) 
+    console.log(lastInfo)
+    setArr(lastInfo);
+ }
+ // console.log(arr);
        const saveDataHandler = (expense) =>{
           let myObj = {
             ...expense,id:Math.random().toString()
@@ -36,14 +45,20 @@ const App = () => {
               ...prevState , myObj
             ]
           })
-          console.log(myObj);
-          console.log('appjs');
+          setValue((prevState) =>{
+            return [
+              ...prevState , myObj
+            ]
+          })
+          //console.log(myObj);
+         // console.log('appjs');
+          
        }  
   return (
 
     <div className="App">
     <ExpenseForm onSaveData = {saveDataHandler} />
-    <Expense data = {arr} />
+    <Expense data = {arr} onFilter ={filterItems}/>
     </div>
   );
 }

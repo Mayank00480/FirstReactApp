@@ -3,7 +3,7 @@ import './ExpenseFilter.css'
 const ExpenseFilter = (props) => {
   const selectHandler = (e) =>{
    // console.log(e.target.value)
-   props.onFilter(e.target.value);
+   props.onExpenseFilter(e.target.value);
   } 
     return (
     <div>

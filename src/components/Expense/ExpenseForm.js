@@ -22,6 +22,7 @@ const ExpenseForm = (props) => {
           cost :amount,
           date :new Date(`${date}`)
         }
+        console.log(obj);
         props.onSaveData(obj);
         /*  console.log(1);
          e.preventDefault();
