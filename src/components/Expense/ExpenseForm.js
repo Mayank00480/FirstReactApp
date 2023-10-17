@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
-    
+       const[visibile ,setVisible] = useState(false);
        const [title ,setTitle] = useState('');
        const [date , setDate] = useState('');
        const [amount ,setAmount] = useState('');
@@ -24,6 +24,7 @@ const ExpenseForm = (props) => {
         }
         console.log(obj);
         props.onSaveData(obj);
+        setVisible(false);
         /*  console.log(1);
          e.preventDefault();
          let expenseName = document.getElementById('expenseName');
@@ -34,7 +35,8 @@ const ExpenseForm = (props) => {
     
   return (
     <div className = "container">
-      <form>
+      {visibile == false &&  <input  id = "inp" onClick = {(e) =>{setVisible(true)}} type = "submit" value = "Open Form"/>}
+     { visibile == true && (<form>
       <label htmlFor = "expenseName">Expense Name</label>
       <input type = "text" id = "expenseName" value = {title} onChange = {titleHandler}/>
       <br/>
@@ -44,8 +46,8 @@ const ExpenseForm = (props) => {
       <label htmlFor = "expenseDate">Expense Date</label>
       <input type = "date" id = "expenseDate" min = "2019-01-01" max = "2023-12-31" value = {date} onChange = {dateHandler}/>
       <br/>
-      <input onClick = {submitHandler} type = "submit" value = "submit"/>
-      </form>
+      <input onClick = {submitHandler} type = "submit" value = "Add Expense"/>
+      </form>) }
     </div>
   )
 }

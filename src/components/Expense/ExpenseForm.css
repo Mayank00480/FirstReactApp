@@ -1,13 +1,27 @@
 .container{
-background-color: skyblue;
+background-color: purple;
 border-radius: 5px;
 position: relative;
 left : 500px;
 top : 20px;
 width:500px;
+
+}
+form{
+    color : white
+}
+#inp{
+    text-align: center;
+    margin : 10px 20px;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    left:170px;
+    
 }
 .container form label{
     margin: 10px 20px;
+    color : white;
 }
 .container form input{
     margin : 10px 20px;
@@ -16,5 +30,5 @@ width:500px;
 }
 .container form input[type = "submit"]{
     position: relative;
-    left:60px;
+    left:170px;
 }
